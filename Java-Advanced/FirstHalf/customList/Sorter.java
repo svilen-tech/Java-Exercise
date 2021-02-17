@@ -1,0 +1,17 @@
+package generics.customList;
+
+
+public class Sorter {
+    public static<T extends Comparable<T>> void sort(CustomList<T> list){
+
+        for (int i = 0; i < list.size(); i++) {
+            T currEl = list.get(i);
+            for (int j = i+1; j <list.size() ; j++) {
+                if (currEl.compareTo(list.get(j))>0){
+                    list.swap(i,j);
+                }
+            }
+        }
+
+    }
+}
